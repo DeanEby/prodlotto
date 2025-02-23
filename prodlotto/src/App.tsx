@@ -56,14 +56,15 @@ function App() {
       let selectedArrays = Array.from(selectedCatagories);
       let newTitle = [];
       for (let i = 0; i < selectedArrays.length; i++){
-        newTitle.push(selectedArrays[i][getRandomInt(selectedArrays.length)])
+        newTitle.push(selectedArrays[i][getRandomInt(selectedArrays[i].length)])
+        
       }
-      console.log(newTitle)
-      console.log(selectedArrays)
-
+      
+    let newTitleString = newTitle.toString()
+    newTitleString = newTitleString.replace(/,/g , " | ")
     let title = document.getElementById('title');
     if (title){
-      title.textContent = newTitle.toString();
+      title.textContent = newTitleString;
     }
   }
   return (
