@@ -2,15 +2,12 @@ import { useEffect } from 'react';
 import './App.css'
 
 import {songElements} from './songElements.tsx'
-//import {Element} from './utils/data-elements.ts'
 
 function App() {
   let elements : string[] = [];
-  //console.log(songElements);
   function getRandomInt(max : number){
     return Math.floor(Math.random() * max)
   }
-
   function updateElement(elementNumber : number){
     let element = document.getElementById('element' + String(elementNumber));
     let elementArray = songElements.get(elements[elementNumber - 1])
