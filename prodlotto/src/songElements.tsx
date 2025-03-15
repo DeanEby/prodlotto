@@ -83,7 +83,8 @@ export let songElements = new Map<string, string[]>([
         "heavy sample use",
         "heavy automation",
         "convolution",
-        "duplicate an effect 5 times"
+        "duplicate an effect 5 times",
+        "turn it up to 11"
     ]],
     ["descriptive_word", [
         "sad",
