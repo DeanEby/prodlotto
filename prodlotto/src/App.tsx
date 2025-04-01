@@ -3,6 +3,7 @@ import './App.css'
 
 import {songElements} from './songElements.tsx'
 
+
 function App() {
 
   let elements : string[] = [];
@@ -31,12 +32,15 @@ function App() {
   useEffect(() => {
     updateElements();
   });
-  let buttonClass = "bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 text-grey-100 font-semibold py-2 px-4 border border-purple-500 hover:border-transparent rounded scale-50"
-  let elementClass = '.grid-cols-5 .grid-rows-5 border border-purple-400 basis-full w-[250px] h-[300px]'
+  let buttonClass = "bg-transparent text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl hover:bg-gray-400 text-gray-100 hover:text-purple-800 text-grey-100 font-semibold py-2 px-4 border border-purple-500 hover:border-transparent rounded scale-50"
+  let elementClass = '.grid-cols-5 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl .grid-rows-5 border border-purple-400 w-[250px] h-[300px] w-full md:w-1/2 flex-1 mx-auto max-w-md'
+
   return (
-    <div className="justify-self-center items-center p-11 m-30">
-      <h1 className='text-center text-7xl font-bold text-gray-200 p-12 animate-pulse'>ProdLotto</h1>
-      <div className = "flex justify-between text-3xl p-5 font-bold text-gray-200 gap-20 capitalize text-center">
+    <div className="justify-self-center items-center p-11 m-30 shrink">
+      <h1 className='text-center text-7xl font-bold text-gray-200 p-12 animate-pulse'>
+        ProdLotto
+      </h1>
+      <div className = "flex justify-between text-3xl p-5 font-bold text-gray-200 gap-20 capitalize text-center w-full h-auto ">
         <div className={elementClass}>
           <button className={buttonClass}
               onClick={() => updateElement(1)}>regenerate</button>
