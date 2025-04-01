@@ -44,11 +44,11 @@ function App() {
 
     
   return (
-    <div className="justify-self-center items-center p-11 m-30 shrink">
+    <div className="container mx-auto px-4 py-8">
       <h1 className='text-center text-7xl font-bold text-gray-200 p-12 animate-pulse'>
         ProdLotto
       </h1>
-      <div className = "flex justify-between text-3xl p-5 font-bold text-gray-200 gap-20 capitalize text-center w-full h-auto ">
+      <div className = "flex flex-wrap gap-4 text-3xl p-5 font-bold text-gray-200 capitalize text-center">
       <Card id={1}/>
       <Card id={2}/>
       <Card id={3}/>
