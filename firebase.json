@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "prodlotto",
+    "public": "prodlotto/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
