@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "prodlotto",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

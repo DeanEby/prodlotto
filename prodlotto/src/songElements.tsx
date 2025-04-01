@@ -10,6 +10,13 @@ export let songElements = new Map<string, string[]>([
         "adapt an old idea",
         "leave the mistakes",
         "take direction from someone unqualified",
+        "extended mix",
+        "work fast",
+        "lyrics come first",
+        "lean on other people's work",
+        "in the box",
+        "out of the box",
+        "trust your ear",
     ]],
     ["bpm", [
         "60 bpm", "61 bpm", "62 bpm", "63 bpm", "64 bpm",
@@ -84,7 +91,9 @@ export let songElements = new Map<string, string[]>([
         "heavy automation",
         "convolution",
         "duplicate an effect 5 times",
-        "turn it up to 11"
+        "turn it up to 11",
+        "use something for an unintended purpose",
+        "chop-it-up",
     ]],
     ["descriptive_word", [
         "sad",
@@ -102,7 +111,9 @@ export let songElements = new Map<string, string[]>([
         "psychedelic",
         "upbeat",
         "danceable",
-        "fast paced"
+        "fast paced",
+        "subtle",
+        "washed-out"
     ]],
     ["theory", [
         "chordal",
@@ -122,7 +133,11 @@ export let songElements = new Map<string, string[]>([
         "evolving main synth",
         "kick driven",
         "baille drum pattern",
-        "riff driven"
+        "riff driven",
+        "embrace imperfection",
+        "play with expectations",
+        "ambitious song structure",
+
     ]]
 ])
 

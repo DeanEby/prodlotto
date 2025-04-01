@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     updateElements();
   });
-  let buttonClass = "bg-transparent hover:bg-purple-500 text-grey-100 font-semibold hover:text-white py-2 px-4 border border-purple-500 hover:border-transparent rounded scale-50"
+  let buttonClass = "bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 text-grey-100 font-semibold py-2 px-4 border border-purple-500 hover:border-transparent rounded scale-50"
   let elementClass = '.grid-cols-5 .grid-rows-5 border border-purple-400 basis-full w-[250px] h-[300px]'
   return (
     <div className="justify-self-center items-center p-11 m-30">
@@ -40,36 +40,36 @@ function App() {
         <div className={elementClass}>
           <button className={buttonClass}
               onClick={() => updateElement(1)}>regenerate</button>
-          <h1 id='element1'>testest</h1>
+          <h1 id='element1'></h1>
         </div>
         
         <div className={elementClass}>
           <button className={buttonClass}
               onClick={() => updateElement(2)}>regenerate</button>
-          <h1 id='element2'>testest</h1>
+          <h1 id='element2'></h1>
         </div>
 
         <div className={elementClass}>
           <button className={buttonClass}
               onClick={() => updateElement(3)}>regenerate</button>
-          <h1 id='element3'>testest</h1>
+          <h1 id='element3'></h1>
         </div>
 
         <div className={elementClass}>
           <button className={buttonClass}
               onClick={() => updateElement(4)}>regenerate</button>
-          <h1 id='element4'>testest</h1>
+          <h1 id='element4'></h1>
         </div>
 
         <div className={elementClass}>
           <button className={buttonClass}
               onClick={() => updateElement(5)}>regenerate</button>
-          <h1 id='element5'>testest</h1>
+          <h1 id='element5'></h1>
         </div>
 
       </div>
       <div className="justify-self-center">
-        <button className='bg-transparent hover:bg-gray-100 text-gray-100 hover:text-purple-400 font-semibold py-2 px-4 border border-purple-400 rounded shadow'
+        <button className='bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 font-semibold py-8 px-8 border border-purple-400 rounded shadow'
             onClick={() => updateElements()}>Generate Song Idea</button>
       </div>
     </div>
