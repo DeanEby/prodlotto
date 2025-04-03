@@ -59,9 +59,16 @@ function App() {
         
         
       <div className="justify-self-center">
-        <button className='bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 font-semibold py-8 px-8 border border-purple-400 rounded shadow'
+        <button className='bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 font-semibold py-8 px-8 border border-purple-400 rounded shadow my-5'
             onClick={() => updateElements()}>Generate Song Idea</button>
       </div>
+      <h1 className='text-gray-100 font-semibold'>
+      Prodlotto is my spin on Brian Eno and Peter Schmidt's Oblique Strategies card deck, designed specifically for music producers.
+      I often find myself creating similar types of songs and relying on the same tools, which tends to lead to less creative results.
+      Prodlotto helps break that cycle by generating a unique set of constraints to spark fresh and creative ideas. Just click the 
+      "Generate Song Idea" button to receive a new combination of song elements, then start producing. If most of the elements work 
+      for you but you’d like to tweak one or two, use the "Regenerate" button on the top of the card to swap them out.
+      </h1>
     </div>
   )
 }
