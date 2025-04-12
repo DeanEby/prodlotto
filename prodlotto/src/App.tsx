@@ -1,10 +1,27 @@
 import { useEffect } from 'react';
 import './App.css'
-import Card from './card.tsx'
+import Card from './components/card.tsx'
 import {songElements} from './songElements.tsx'
 
 
 let elements : string[] = [];
+
+function animateElement(elementNumber: number) {
+    let element = document.getElementById(String(elementNumber));
+    if (element) {
+      const interval = setInterval(() => {
+        let elementArray = songElements.get(elements[elementNumber - 1]);
+        if (elementArray) {
+          element.textContent = elementArray[getRandomInt(elementArray.length)];
+        }
+      }, 100);
+      // Clear interval after animation duration
+      setTimeout(() => {
+        clearInterval(interval)
+      }, 2000);
+      
+    }
+  }
 
 
 function updateElements() {
@@ -26,6 +43,7 @@ function getRandomInt(max : number){
 
 
 export function updateElement(elementNumber : number){
+  animateElement(elementNumber);
   let element = document.getElementById(String(elementNumber));
   let elementArray = songElements.get(elements[elementNumber - 1])
     if (element && elementArray){
