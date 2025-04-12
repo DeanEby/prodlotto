@@ -4,10 +4,12 @@ const Card = ({id}:{
     id: number,
 }) => {
   return ( 
-  <div className="grid-cols-5 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl grid-rows-5 border border-purple-400 w-[250px] h-auto sm:h-[300px] w-full md:w-1/2 flex-1 mx-auto max-w-md">
-    <button className="cursor-pointer bg-transparent text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl hover:bg-gray-400 text-gray-100 hover:text-purple-800 text-grey-100 font-semibold py-2 px-4 border border-purple-500 hover:border-transparent rounded scale-50"
-        onClick={() => updateElement(id)}>regenerate</button>
-    <h1 id={String(id)} className="transition-opacity duration-200"></h1>
+  <div className="grid grid-cols-5 grid-rows-5 border border-purple-400 w-[140px] h-[160px] sm:w-[250px] sm:h-[300px] mx-auto p-2">
+    <div className="col-span-5">
+      <button className="cursor-pointer bg-transparent text-xs sm:text-sm md:text-base hover:bg-gray-400 text-gray-100 hover:text-purple-800 text-grey-100 font-semibold py-1 px-2 border border-purple-400 hover:border-transparent rounded"
+          onClick={() => updateElement(id)}>regenerate</button>
+    </div>
+    <h1 id={String(id)} className="transition-opacity duration-200 text-center col-span-5 row-span-4 flex items-center justify-center text-sm sm:text-lg md:text-xl lg:text-2xl"></h1>
   </div>
   )
 }
