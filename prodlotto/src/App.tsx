@@ -107,7 +107,7 @@ function App() {
       Prodlotto helps break that cycle by generating a unique set of constraints to spark fresh and creative ideas. Just click the 
       "Generate Song Idea" button to receive a new combination of song elements, then start producing. If most of the elements work 
       for you but you'd like to tweak one or two, use the "Regenerate" button on the top of the card to swap them out. If you are unfamiliar with 
-      a technique mentioned, I encourage you to do a bit of googling. Many of the song elements are intentionally vague, leaving things up to your interpretation. 
+      a technique mentioned, I encourage you to do a bit of googling. I have also provided links for some of the concepts. Many of the song elements are intentionally vague, leaving things up to your interpretation. 
       </h1>
     </div>
   )
