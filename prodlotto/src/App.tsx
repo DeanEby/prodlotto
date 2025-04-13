@@ -5,32 +5,52 @@ import {songAttributes} from './songAttributes.ts'
 
 
 let cards : string[] = [];
+let attributes : string[] = [];
 
 function animateCard(cardNumber: number) {
     let card = document.getElementById(String(cardNumber));
     if (card) {
-      // const interval = setInterval(() => {
-      //   let cardArray = songAttributes.get(cards[cardNumber - 1]);
-      //   if (cardArray) {
-      //     card.textContent = cardArray[getRandomInt(cardArray.length)];
-      //   }
-      // }, 100);
-      // // Clear interval after animation duration
-      // setTimeout(() => {
-      //   clearInterval(interval)
-      // }, 2000);
-      
+        const category = cards[cardNumber - 1] as keyof typeof songAttributes;
+        const attributeList = Object.keys(songAttributes[category]);
+        const attributeValues = Object.values(songAttributes[category]);
+        
+        // Animation duration in milliseconds
+        const animationDuration = 1000;
+        // How often to change the text (every 100ms)
+        const changeInterval = 100;
+        // Calculate how many times to change the text
+        const numberOfChanges = animationDuration / changeInterval;
+        
+        let changes = 0;
+        const interval = setInterval(() => {
+            if (changes < numberOfChanges) {
+                // Get a random attribute and value
+                const randomIndex = getRandomInt(attributeList.length);
+                const randomAttribute = attributeList[randomIndex];
+                const randomValue = attributeValues[randomIndex];
+                
+                // Update the card content
+                if (randomValue !== "empty") {
+                    card.innerHTML = `<a href="${randomValue}" target="_blank" class="text-purple-400 hover:text-purple-300">${randomAttribute}</a>`;
+                } else {
+                    card.textContent = randomAttribute;
+                }
+                
+                changes++;
+            } else {
+                // Stop the animation and restore original content
+                clearInterval(interval);
+            }
+        }, changeInterval);
     }
-  }
+}
 
 
 function updateCards() {
   const selectedCatagories = new Set<string>();
-  // console.log(songAttributes);
   while (selectedCatagories.size < 5) {
     selectedCatagories.add(getRandomAttributeCategory());
   }
-  // console.log(selectedCatagories);
   let selectedArray = Array.from(selectedCatagories);
   cards = selectedArray;
   for(let i=1; i < 6; i++){
@@ -47,18 +67,17 @@ function getRandomAttributeCategory(){
   return categories[getRandomInt(categories.length)]
 }
 
-
-
 export function updateCard(cardNumber : number){
+  console.log(attributes);
   animateCard(cardNumber);
   let card = document.getElementById(String(cardNumber));
   const attributeList = Object.keys(songAttributes[cards[cardNumber - 1] as keyof typeof songAttributes])
   const attributeValues = Object.values(songAttributes[cards[cardNumber - 1] as keyof typeof songAttributes])
-  // console.log(attributeValues);
   let randomIndex = getRandomInt(attributeList.length);
   let randomAttribute = attributeList[randomIndex];
+  attributes.push(randomAttribute);
+  addHistory();
   let randomValue = attributeValues[randomIndex];
-  // console.log(randomAttribute);
   if (card) {
     if (randomValue !== "empty") {
       const link = document.createElement('a')
@@ -74,6 +93,15 @@ export function updateCard(cardNumber : number){
     }
   }
 
+}
+
+function addHistory() {
+  let history = document.getElementById("history");
+  if (history) {
+    const entry = document.createElement('h1');
+    entry.textContent = `History: ${attributes.join(', ')}`;
+    history.appendChild(entry);
+  }
 }
 
 function App() {
@@ -101,6 +129,9 @@ function App() {
         <button className='cursor-pointer bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 font-semibold py-4 sm:py-8 px-4 sm:px-8 border border-purple-400 rounded shadow my-2 sm:my-5 text-sm sm:text-base'
             onClick={() => updateCards()}>Generate Song Idea</button>
       </div>
+      <h1 id="history" className='text-gray-100 font-semibold text-sm sm:text-base px-2 sm:px-0 border border-purple-400'>
+        History: {attributes.join(', ')}
+        </h1>
       <h1 className='text-gray-100 font-semibold text-sm sm:text-base px-2 sm:px-0'>
       Prodlotto is my spin on Brian Eno and Peter Schmidt's Oblique Strategies card deck, designed specifically for music producers.
       I often find myself creating similar types of songs and relying on the same tools, which tends to lead to less creative results.
