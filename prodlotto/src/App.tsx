@@ -5,7 +5,6 @@ import {songAttributes} from './songAttributes.ts'
 
 
 let cards : string[] = [];
-let attributes : string[] = [];
 
 function animateCard(cardNumber: number) {
     let card = document.getElementById(String(cardNumber));
@@ -68,15 +67,12 @@ function getRandomAttributeCategory(){
 }
 
 export function updateCard(cardNumber : number){
-  console.log(attributes);
   animateCard(cardNumber);
   let card = document.getElementById(String(cardNumber));
   const attributeList = Object.keys(songAttributes[cards[cardNumber - 1] as keyof typeof songAttributes])
   const attributeValues = Object.values(songAttributes[cards[cardNumber - 1] as keyof typeof songAttributes])
   let randomIndex = getRandomInt(attributeList.length);
   let randomAttribute = attributeList[randomIndex];
-  attributes.push(randomAttribute);
-  addHistory();
   let randomValue = attributeValues[randomIndex];
   if (card) {
     if (randomValue !== "empty") {
@@ -94,16 +90,6 @@ export function updateCard(cardNumber : number){
   }
 
 }
-
-function addHistory() {
-  let history = document.getElementById("history");
-  if (history) {
-    const entry = document.createElement('h1');
-    entry.textContent = `History: ${attributes.join(', ')}`;
-    history.appendChild(entry);
-  }
-}
-
 function App() {
 
 
@@ -129,9 +115,6 @@ function App() {
         <button className='cursor-pointer bg-transparent hover:bg-gray-400 text-gray-100 hover:text-purple-800 font-semibold py-4 sm:py-8 px-4 sm:px-8 border border-purple-400 rounded shadow my-2 sm:my-5 text-sm sm:text-base'
             onClick={() => updateCards()}>Generate Song Idea</button>
       </div>
-      <h1 id="history" className='text-gray-100 font-semibold text-sm sm:text-base px-2 sm:px-0 border border-purple-400'>
-        History: {attributes.join(', ')}
-        </h1>
       <h1 className='text-gray-100 font-semibold text-sm sm:text-base px-2 sm:px-0'>
       Prodlotto is my spin on Brian Eno and Peter Schmidt's Oblique Strategies card deck, designed specifically for music producers.
       I often find myself creating similar types of songs and relying on the same tools, which tends to lead to less creative results.
